@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2025-06-01 08:00:00-0400
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+Started as a **Research Assistant at CASR, BUET**, working on deep-unrolled and federated-learning precoding for cell-free massive MIMO. First manuscript (max-min-fair precoding) in preparation for IEEE TWC. 📡
