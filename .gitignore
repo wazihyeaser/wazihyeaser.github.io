@@ -13,5 +13,6 @@ assets/rendercv/rendercv_output/*.typ
 al-folio-upgrade-report.md
 node_modules/
 output/playwright/
+project-notes/
 test-results/
 vendor
