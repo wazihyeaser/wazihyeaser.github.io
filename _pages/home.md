@@ -13,8 +13,8 @@ latest_posts:
   enabled: false
 ---
 
-<!-- Custom hero. The theme's default header + profile block are hidden via the
-     <style> below; the whole hero is built here for full control. -->
+<!-- Custom hero. The theme default header and profile block are hidden by the CSS
+     block further down; the whole hero is built here for full control. -->
 <div class="hero">
   <div class="hero__greeting">
     <p class="hero__hi">Hi, I'm</p>
