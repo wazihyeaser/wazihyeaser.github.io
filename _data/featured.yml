@@ -1,0 +1,65 @@
+# Curated homepage "Featured" strips.
+#
+# One block per category, rendered in this order on the home page as horizontal
+# scroll-snap strips. Each strip shows its `items` (1–2 look fine; 4+ start
+# scrolling). An empty `items:` list renders a single "coming soon" placeholder.
+#
+# item fields:
+#   title  (required) — card heading
+#   blurb  (optional) — one line of description
+#   image  (optional) — path under /assets/img/... ; omit for a text-only card
+#   link   (optional) — where the card points (internal path or full URL)
+#   meta   (optional) — small line under the title (e.g. venue, status, date)
+
+- id: research
+  heading: Research & Publications
+  view_all: /publications/
+  items:
+    - title: Deep-Unrolled Max-Min Precoding for Cell-Free Massive MIMO
+      meta: Ongoing · Manuscript
+      blurb: Unrolling an iterative max-min-fair solver into a fixed-depth network, trained label-free on a worst-user spectral-efficiency objective.
+      link: /publications/
+    - title: "Elevating Gas Safety Standards: ESP32-Based Detection with Blynk"
+      meta: Conference Paper · IEEE TENSYMP 2024
+      blurb: An ESP32-based gas-detection system with Blynk IoT integration for real-time safety monitoring and alerts.
+      link: /publications/
+
+- id: projects
+  heading: Projects
+  view_all: /projects/
+  items:
+    - title: Power System Fault Detection, Classification & Location
+      meta: Machine Learning
+      blurb: An ML pipeline that detects, classifies, and locates faults on a 250 km transmission line (99.5% detection accuracy).
+      link: /projects/power-system-fault-detection/
+      image: assets/img/projects/power-system-fault-detection/summary_dashboard.png
+    - title: IoT Smart Home Automation System
+      meta: ESP8266 · IoT
+      blurb: Multi-sensor monitoring, four-appliance relay control, an OLED display, and ThingSpeak cloud.
+      link: /projects/smart-home/
+      image: assets/img/projects/smart-home/system_architecture.png
+    - title: Bluetooth-Controlled Car with Obstacle Avoidance
+      meta: Arduino · Robotics
+      blurb: A 4WD Arduino car with Bluetooth control, ultrasonic obstacle avoidance, and a browser-based simulator.
+      link: /projects/bluetooth-car/
+      image: assets/img/projects/bluetooth-car/simulator_preview.png
+
+- id: writing
+  heading: Blog
+  view_all: /blog/
+  items:
+    - title: Again and Again and Again.....
+      meta: Book review
+      blurb: What three books on habit and focus reveal about repetition, attention, and the machinery behind success.
+      link: /blog/2026/again-and-again/
+      image: assets/img/blog/again-and-again.jpg
+    - title: Thinking right is the right thinking
+      meta: Book review
+      blurb: Five books from different fields that keep arriving at the same idea about how to think.
+      link: /blog/2026/thinking-right/
+      image: assets/img/blog/thinking-right.jpg
+    - title: Turtle always wins
+      meta: Self-help
+      blurb: On consistency, dedication, and the quiet power of simply not stopping.
+      link: /blog/2026/turtle-always-wins/
+      image: assets/img/blog/tortoise-walking.jpg

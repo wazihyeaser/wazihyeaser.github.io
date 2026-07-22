@@ -1,0 +1,48 @@
+---
+---
+{%- comment -%}
+  Custom publication card, driven by the .bib entries. Fields used per entry:
+    paper_type = the type pill label (Conference Paper / Journal Paper / Thesis / Manuscript / Preprint)
+    venue      = the second pill (links out if `html`/`pdf` is present, else a plain status label)
+    html/pdf   = the paper link (makes the venue pill clickable)
+    abstract   = shown under "Abstract:" (line-clamped on the card)
+    detail     = URL of the detail page for "Read More"
+  See _pages/publications.md for the page + styling.
+{%- endcomment -%}
+{%- assign type_label = entry.paper_type | default: 'Manuscript' -%}
+{%- assign paper_link = entry.html | default: entry.pdf -%}
+
+<article class="pubcard" id="{{ entry.key }}">
+  <div class="pubcard__tags">
+    <span class="pubcard__type">{{ type_label }}</span>
+    {%- if entry.venue -%}
+      {%- if paper_link -%}
+        <a class="pubcard__venue pubcard__venue--link" href="{{ paper_link }}" target="_blank" rel="noopener noreferrer">{{ entry.venue }}<span class="pubcard__ext" aria-hidden="true">&#8599;</span></a>
+      {%- else -%}
+        <span class="pubcard__venue">{{ entry.venue }}</span>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+
+  <h3 class="pubcard__title">{{ entry.title }}</h3>
+
+  <p class="pubcard__authors">
+    {%- for author in entry.author_array -%}
+      {%- assign last_clean = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+      {%- assign is_self = false -%}
+      {%- if site.scholar.last_name contains last_clean -%}
+        {%- if site.scholar.first_name contains author.first -%}{%- assign is_self = true -%}{%- endif -%}
+      {%- endif -%}
+      {%- unless forloop.first %}, {% endunless -%}
+      {%- if is_self -%}<strong>{{ author.first }} {{ author.last }}</strong>{%- else -%}{{ author.first }} {{ author.last }}{%- endif -%}
+    {%- endfor -%}
+  </p>
+
+  {%- if entry.abstract -%}
+    <p class="pubcard__abstract"><span class="pubcard__abslabel">Abstract:</span> {{ entry.abstract }}</p>
+  {%- endif -%}
+
+  {%- if entry.detail -%}
+    <a class="pubcard__more" href="{{ entry.detail | relative_url }}">Read More <span aria-hidden="true">&#8594;</span></a>
+  {%- endif -%}
+</article>
